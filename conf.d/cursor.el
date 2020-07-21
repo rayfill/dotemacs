@@ -1,0 +1,1 @@
+(set-cursor-color "#ffffff")

@@ -1,0 +1,9 @@
+.cask
+*~
+session.*
+elpa
+tramp
+.lsp-session-v1
+ac-comphist.dat
+*.elc
+*.el_
