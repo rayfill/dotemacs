@@ -7,6 +7,7 @@
 
 (load "~/.emacs.d/function.el")
 (load "~/.emacs.d/package.el")
+(load "~/.emacs.d/install.el")
 
 (let ((dir "~/.emacs.d/conf.d/"))
   (dolist (content (sort (directory-files dir) #'string<))
