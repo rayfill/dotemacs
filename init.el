@@ -22,3 +22,6 @@
 (ignore-errors
   (load "~/.emacs.d/custom.el"))
 
+(setq kill-emacs-query-functions
+      (append kill-emacs-query-functions
+	      (lambda () (y-or-n-p "quit emacs?"))))
