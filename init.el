@@ -9,14 +9,17 @@
 (load "~/.emacs.d/package.el")
 (load "~/.emacs.d/install.el")
 
-(let ((dir "~/.emacs.d/conf.d/"))
-  (dolist (content (sort (directory-files dir) #'string<))
-    (when (string-match "^.*\\.el$" content)
-      (format "loading %s" content)
-      (let ((filepath (concat dir content)))
-	(format "%s" content)
-	(ensure-byte-compile-file filepath)
-	(load (format "%s" (concat dir content "c")))))))
+(defun compile-and-load (dir)
+  (when (file-exists-p dir)
+    (dolist (content (sort (directory-files dir) #'string<))
+      (when (string-match "^.*\\.el$" content)
+	(format "loading %s" content)
+	(let ((filepath (concat dir content)))
+	  (format "%s" content)
+	  (ensure-byte-compile-file filepath)
+	  (load (format "%s" (concat dir content "c"))))))))
+
+(compile-and-load "~/.emacs.d/conf.d/")
 
 (setq custom-file "~/.emacs.d/custom.el")
 (ignore-errors
@@ -25,3 +28,5 @@
 (setq kill-emacs-query-functions
       (append kill-emacs-query-functions
 	      (lambda () (y-or-n-p "quit emacs?"))))
+
+(compile-and-load "~/.emacs.d/user.d/")
