@@ -7,3 +7,6 @@ tramp
 ac-comphist.dat
 *.elc
 *.el_
+.cache/
+custom.el
+user.d/

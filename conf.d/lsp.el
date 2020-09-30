@@ -1,3 +1,8 @@
+(eval-when (compile)
+  (require 'lsp-mode)
+  (require 'flymake))
+
+(setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
 (use-package lsp-mode
   :init
   (require 'bind-key)
@@ -26,7 +31,7 @@
 	("C-c r". lsp-rename)
 	("C-`" . flymake-goto-next-error))
   :config
-  (require 'lsp-clients)
+  ;(require 'lsp-clients)
   ;; LSP UI tools
   (use-package lsp-ui
     :init
@@ -71,7 +76,7 @@
     :config
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
     (eval-after-load "flymake"
-      (setq flymake-fringe-indicator-position nil)))
+      (setq flymake-fringe-indicator-position 'right-fringe)))
   (use-package company-lsp
     :custom
     (company-lsp-cache-candidates t) ;; always, using, cache

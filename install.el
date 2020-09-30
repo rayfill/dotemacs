@@ -10,3 +10,5 @@
 (package-install 'multi-web-mode)
 (package-install 'typescript-mode)
 (package-install 'which-key)
+(package-install 'sql-indent)
+
