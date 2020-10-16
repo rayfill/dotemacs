@@ -10,3 +10,7 @@ ac-comphist.dat
 .cache/
 custom.el
 user.d/
+site-conf.d/
+site-install.el
+url/
+snippets/
