@@ -15,11 +15,9 @@
    (quote
     ("2bf0d15259e87faf4906550ffa9d4c2a3e9588d99de2422b940206075d9df1fe" "2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" default)))
  '(lsp-auto-guess-root t)
- '(lsp-document-sync-method (quote incremental))
- '(lsp-enable-completion-at-point nil)
+ '(lsp-completion-enable nil)
  '(lsp-log-io nil)
- '(lsp-prefer-flymake (quote flymake))
- '(lsp-print-io nil)
+ '(lsp-prefer-flymake (quote flymake) t)
  '(lsp-print-performance nil)
  '(lsp-trace nil t)
  '(lsp-ui-doc-enable t t)
@@ -48,7 +46,7 @@
     (("figure alternative" "http://figure.seesaa.net/index.rdf" nil nil nil))))
  '(package-selected-packages
    (quote
-    (yasnippet which-key use-package typescript-mode multi-web-mode lsp-ui go-mode exec-path-from-shell dap-mode company-lsp atom-dark-theme))))
+    (flymake-eslint highlight-indentation flymake-yaml yaml-mode lsp-treemacs lsp-mssql orgtbl-aggregate org org-mode flymake cargo flymake-rust rust-mode web-server websocket markdown-preview-mode sql-indent yasnippet which-key use-package typescript-mode multi-web-mode lsp-ui go-mode exec-path-from-shell dap-mode company-lsp atom-dark-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

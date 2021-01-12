@@ -1,5 +1,6 @@
+(eval-when (compile load execute)
+  (require 'lsp-mode))
 (eval-when (compile)
-  (require 'lsp-mode)
   (require 'flymake))
 
 (setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
@@ -19,7 +20,7 @@
   (lsp-print-performance nil)
   ;; general
   (lsp-auto-guess-root t)
-  (lsp-document-sync-method 'incremental) ;; always, send, incremental
+  (lsp-document-sync-method lsp--sync-incremental) ;; lsp--sync-none, lsp--sync-full or lsp--sync-incremental
   (lsp-prefer-flymake 'flymake)
   (lsp-enable-completion-at-point nil)
   :bind
@@ -76,7 +77,7 @@
     :config
     (add-hook 'lsp-mode-hook 'lsp-ui-mode)
     (eval-after-load "flymake"
-      (setq flymake-fringe-indicator-position 'right-fringe)))
+      (setq flymake-fringe-indicator-position nil)))
   (use-package company-lsp
     :custom
     (company-lsp-cache-candidates t) ;; always, using, cache

@@ -11,4 +11,8 @@
 (package-install 'typescript-mode)
 (package-install 'which-key)
 (package-install 'sql-indent)
-
+(package-install 'org)
+(package-install 'orgtbl-aggregate)
+(package-install 'yaml-mode)
+(package-install 'flymake-yaml)
+(package-install 'highlight-indentation)

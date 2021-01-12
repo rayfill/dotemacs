@@ -8,6 +8,8 @@
 (load "~/.emacs.d/function.el")
 (load "~/.emacs.d/package.el")
 (load "~/.emacs.d/install.el")
+(when (file-exists-p "~/.emacs.d/site-install.el")
+  (load "~/.emacs.d/site-install.el"))
 
 (defun compile-and-load (dir)
   (when (file-exists-p dir)
@@ -20,6 +22,8 @@
 	  (load (format "%s" (concat dir content "c"))))))))
 
 (compile-and-load "~/.emacs.d/conf.d/")
+(when (file-exists-p "~/.emacs.d/site-conf.d/")
+  (compile-and-load "~/.emacs.d/site-conf.d/"))
 
 (setq custom-file "~/.emacs.d/custom.el")
 (ignore-errors
@@ -29,4 +33,7 @@
       (append kill-emacs-query-functions
 	      (lambda () (y-or-n-p "quit emacs?"))))
 
-(compile-and-load "~/.emacs.d/user.d/")
+(when (file-exists-p "~/.emacs.d/user.d/")
+  (compile-and-load "~/.emacs.d/user.d/"))
+(when (file-exists-p "~/.emacs.d/site-user.d/")
+  (compile-and-load "~/.emacs.d/site-user.d/"))
