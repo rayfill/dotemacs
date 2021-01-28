@@ -6,7 +6,6 @@
 (package-install 'go-mode)
 (package-install 'lsp-mode)
 (package-install 'lsp-ui)
-(package-install 'company-lsp)
 (package-install 'multi-web-mode)
 (package-install 'typescript-mode)
 (package-install 'which-key)
