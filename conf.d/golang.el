@@ -1,8 +1,13 @@
+(eval-when (compile load execute)
+  (require 'cc-mode))
+
 (use-package exec-path-from-shell
   :config
-  (let ((envs '("PATH" "GOROOT" "GOPATH")))
-    (exec-path-from-shell-copy-envs envs))
-  (push (getenv "GOPATH") exec-path))
+  (let ((envs '("PATH" "GOROOT" "GOPATH"))
+	(go-path (getenv "GOPATH")))
+    (exec-path-from-shell-copy-envs envs)
+    (when go-path
+      (push go-path exec-path))))
 
 (defun gmh ()
   (local-set-key (kbd "C-x SPC") 'gud-break)

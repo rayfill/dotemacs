@@ -1,6 +1,7 @@
 (unless (file-exists-p (expand-file-name "~/.emacs.d/elpa"))
   (format "%s" (expand-file-name "~/.emacs.d/elpa"))
   (package-refresh-contents nil))
+
 (package-install 'exec-path-from-shell)
 (package-install 'use-package)
 (package-install 'go-mode)
@@ -15,3 +16,4 @@
 (package-install 'yaml-mode)
 (package-install 'flymake-yaml)
 (package-install 'highlight-indentation)
+(package-install 'nvm)

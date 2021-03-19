@@ -1,3 +1,7 @@
+(eval-when (compile load execute)
+  (require 'cc-mode))
+
+
 (setq tab-width 4)
 (defun my-c-mode-common-hook ()
   ;; add my personal style and set it for the current buffer
