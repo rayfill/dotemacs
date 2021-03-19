@@ -47,7 +47,7 @@
     (("figure alternative" "http://figure.seesaa.net/index.rdf" nil nil nil))))
  '(package-selected-packages
    (quote
-    (nvm lsp-treemacs org lsp-mode yasnippet yaml-mode which-key use-package typescript-mode sql-indent orgtbl-aggregate multi-web-mode markdown-preview-mode lsp-ui lsp-mssql highlight-indentation go-mode flymake-yaml flymake-rust flymake-eslint exec-path-from-shell company cargo))))
+    (nodejs-repl nvm lsp-treemacs org lsp-mode yasnippet yaml-mode which-key use-package typescript-mode sql-indent orgtbl-aggregate multi-web-mode markdown-preview-mode lsp-ui lsp-mssql highlight-indentation go-mode flymake-yaml flymake-rust flymake-eslint exec-path-from-shell company cargo))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

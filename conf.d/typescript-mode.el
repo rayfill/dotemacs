@@ -1,15 +1,16 @@
 (eval-when (compile load execute)
   (require 'use-package)
-  (require 'js)
-  (require 'nodejs-repl))
+  (require 'flymake)
+  (require 'typescript-mode))
 
-(use-package js-mode
+(remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
+(use-package typescript-mode
   :config
-  (setq js-indent-level 2)
+  (setq typescript-indent-level 2)
   (setq indent-tabs-mode nil)
-  :mode "\\.js\\'"
+  :mode "\\.ts\\'"
   :bind
-  (:map js-mode-map
+  (:map typescript-mode-map
         ("C-x C-e" . nodejs-repl-send-last-expression)
         ("C-c C-j" . nodejs-repl-send-line)
         ("C-c C-r" . nodejs-repl-send-region)

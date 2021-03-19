@@ -6,6 +6,10 @@
   (require 'flymake))
 
 (setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
+
+(use-package lsp
+  :hook (typescript-mode js-mode go-mode))
+
 (use-package lsp-mode
   :init
   (require 'bind-key)
@@ -35,7 +39,7 @@
 	("C-`" . flymake-goto-next-error))
   :commands lsp)
 
-;; LSP UI tools  
+;; LSP UI tools
 (use-package lsp-ui-mode
   :init
   (require 'bind-key)

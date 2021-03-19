@@ -17,3 +17,4 @@
 (package-install 'flymake-yaml)
 (package-install 'highlight-indentation)
 (package-install 'nvm)
+(package-install 'nodejs-repl)
