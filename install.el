@@ -18,3 +18,12 @@
 (package-install 'highlight-indentation)
 (package-install 'nvm)
 (package-install 'nodejs-repl)
+(package-install 'elscreen)
+(package-install 'elscreen-separate-buffer-list)
+(package-install 'magit)
+(package-install 'magit-find-file)
+
+(package-install 'package-utils)
+
+(package-utils-upgrade-all t)
+(package-refresh-contents t)

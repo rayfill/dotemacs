@@ -1,7 +1,8 @@
 (eval-when (compile load execute)
-  (require 'use-package))
-(eval-when (compile load execute)
-  (require 'lsp-mode))
+  (require 'use-package)
+  (require 'lsp-mode)
+  (require 'company))
+
 (eval-when (compile)
   (require 'flymake))
 
@@ -36,6 +37,7 @@
 	("C-c C-p r" . lsp-workspace-folders-remove)
 	("C-c C-p d" . lsp-workspace-folders-remove)
 	("C-c r". lsp-rename)
+	("C-." . company-complete)
 	("C-`" . flymake-goto-next-error))
   :commands lsp)
 

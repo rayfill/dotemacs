@@ -4,8 +4,9 @@
   (require 'nodejs-repl))
 
 (use-package js-mode
-  :config
+  :init
   (setq js-indent-level 2)
+  :config
   (setq indent-tabs-mode nil)
   :mode "\\.js\\'"
   :bind
