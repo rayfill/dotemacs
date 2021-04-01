@@ -2,6 +2,9 @@
   (format "%s" (expand-file-name "~/.emacs.d/elpa"))
   (package-refresh-contents nil))
 
+(package-install 'package-utils)
+(package-install 'async)
+
 (package-install 'exec-path-from-shell)
 (package-install 'use-package)
 (package-install 'go-mode)
@@ -22,8 +25,16 @@
 (package-install 'elscreen-separate-buffer-list)
 (package-install 'magit)
 (package-install 'magit-find-file)
+(package-install 'vue-html-mode)
+(package-install 'vue-mode)
 
-(package-install 'package-utils)
-
-(package-utils-upgrade-all t)
-(package-refresh-contents t)
+(eval-when (compile load execute)
+  (require 'async))
+(async-start
+ `(lambda ()
+    (setq load-path ',load-path)
+    (require 'package-utils)
+    (package-refresh-contents)
+    (package-utils-upgrade-all t))
+ (lambda (result)
+   (message "package upgrade processing done.")))

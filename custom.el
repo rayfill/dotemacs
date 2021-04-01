@@ -7,16 +7,11 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
- '(company-lsp-async t nil nil "Customized with use-package company-lsp")
- '(company-lsp-cache-candidates t nil nil "Customized with use-package company-lsp")
- '(company-lsp-enable-recompletion nil nil nil "Customized with use-package company-lsp")
  '(custom-enabled-themes (quote (adwaita)))
  '(custom-safe-themes
    (quote
     ("2bf0d15259e87faf4906550ffa9d4c2a3e9588d99de2422b940206075d9df1fe" "2642a1b7f53b9bb34c7f1e032d2098c852811ec2881eec2dc8cc07be004e45a0" default)))
- '(lsp-auto-guess-root t nil nil "Customized with use-package lsp-mode")
  '(lsp-completion-enable t nil nil "Customized with use-package lsp-mode")
- '(lsp-document-sync-method lsp--sync-incremental nil nil "Customized with use-package lsp-mode")
  '(lsp-log-io nil nil nil "Customized with use-package lsp-mode")
  '(lsp-prefer-flymake (quote flymake) nil nil "Customized with use-package lsp-mode")
  '(lsp-print-performance nil nil nil "Customized with use-package lsp-mode")
@@ -47,7 +42,7 @@
     (("figure alternative" "http://figure.seesaa.net/index.rdf" nil nil nil))))
  '(package-selected-packages
    (quote
-    (elscreen-separate-buffer-list elscreen-separete-buffer-list magit-find-file magit package-utils elscreen nodejs-repl nvm lsp-treemacs org lsp-mode yasnippet yaml-mode which-key use-package typescript-mode sql-indent orgtbl-aggregate multi-web-mode markdown-preview-mode lsp-ui lsp-mssql highlight-indentation go-mode flymake-yaml flymake-rust flymake-eslint exec-path-from-shell company cargo))))
+    (lsp-treemacs vue-html-mode magit elscreen org lsp-mode yasnippet yaml-mode which-key vue-mode use-package typescript-mode sql-indent package-utils orgtbl-aggregate nvm nodejs-repl multi-web-mode markdown-preview-mode magit-find-file lsp-ui lsp-mssql highlight-indentation go-mode flymake-yaml flymake-rust exec-path-from-shell elscreen-separate-buffer-list dash-functional company cargo async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

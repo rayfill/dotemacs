@@ -17,7 +17,6 @@
   (require 'lsp-mode)
   (lsp-register-custom-settings
    '(("gopls.completeUnimported" t)
-     ("gopls.noIncrementalSync" t)
      ("gopls.watchFileChanges" t)))
   :custom
   ;; debug
