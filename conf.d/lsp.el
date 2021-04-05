@@ -27,7 +27,7 @@
   ;; general
   (lsp-auto-guess-root t)
   (lsp-document-sync-method lsp--sync-incremental) ;; lsp--sync-none, lsp--sync-full or lsp--sync-incremental
-  (lsp-prefer-flymake 'flymake)
+  (lsp-diagnostics-provider :flymake)
   (lsp-enable-completion-at-point t)
   :bind
   (:map lsp-mode-map
