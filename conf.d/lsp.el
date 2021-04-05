@@ -19,6 +19,8 @@
    '(("gopls.completeUnimported" t)
      ("gopls.watchFileChanges" t)))
   :custom
+  (gc-cons-threshold (* 128 1024 1024))
+  (read-process-output-max (* 1024 1024))
   ;; debug
   (lsp-print-io nil)
   (lsp-log-io nil)
