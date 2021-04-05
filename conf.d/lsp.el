@@ -24,6 +24,7 @@
   (lsp-log-io nil)
   (lsp-trace nil)
   (lsp-print-performance nil)
+  (lsp-eslint-enable nil)
   ;; general
   (lsp-auto-guess-root t)
   (lsp-document-sync-method lsp--sync-incremental) ;; lsp--sync-none, lsp--sync-full or lsp--sync-incremental
