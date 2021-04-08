@@ -1,4 +1,4 @@
-(eval-when (compile load execute)
+(cl-eval-when (:compile :load :execute)
   (require 'cc-mode))
 
 (use-package exec-path-from-shell

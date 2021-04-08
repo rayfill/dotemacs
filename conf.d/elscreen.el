@@ -1,4 +1,4 @@
-(eval-when (compile load execute)
+(cl-eval-when (:compile :load :execute)
   (require 'elscreen)
   (require 'elscreen-separate-buffer-list)
   (require 'ido)

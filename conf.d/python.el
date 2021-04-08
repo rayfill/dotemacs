@@ -1,4 +1,4 @@
-(require 'cl)
+(require 'cl-lib)
 
 (defun get-win32-python-path ()
   (let ((basedir "C:\\Apps"))

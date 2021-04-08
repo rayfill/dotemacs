@@ -1,9 +1,9 @@
-(eval-when (compile load execute)
+(cl-eval-when (:compile :load :execute)
   (require 'use-package)
-  (require 'js)
+  (require 'js2-mode)
   (require 'nodejs-repl))
 
-(use-package js-mode
+(use-package js2-mode
   :init
   (setq js-indent-level 2)
   :config

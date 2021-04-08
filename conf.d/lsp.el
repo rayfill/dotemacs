@@ -1,9 +1,9 @@
-(eval-when (compile load execute)
+(cl-eval-when (:compile :load :execute)
   (require 'use-package)
   (require 'lsp-mode)
   (require 'company))
 
-(eval-when (compile)
+(cl-eval-when (:compile)
   (require 'flymake))
 
 (setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
@@ -28,7 +28,7 @@
   (lsp-print-performance nil)
   (lsp-eslint-enable nil)
   ;; general
-  (lsp-auto-guess-root t)
+  (lsp-auto-guess-root nil)
   (lsp-document-sync-method lsp--sync-incremental) ;; lsp--sync-none, lsp--sync-full or lsp--sync-incremental
   (lsp-diagnostics-provider :flymake)
   (lsp-enable-completion-at-point t)
@@ -44,7 +44,7 @@
   :commands lsp)
 
 ;; LSP UI tools
-(use-package lsp-ui-mode
+(use-package lsp-ui
   :init
   (require 'bind-key)
   :custom

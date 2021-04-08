@@ -1,4 +1,4 @@
-(eval-when (compile load execute)
+(cl-eval-when (:compile :load :execute)
   (require 'use-package)
   (require 'flymake)
   (require 'typescript-mode))

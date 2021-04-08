@@ -1,6 +1,6 @@
 (ignore-errors (load (expand-file-name "~/quicklisp/slime-helper.el")))
 
-(require 'cl)
+(require 'cl-lib)
 (ignore-errors
   (require 'slime)
   (slime-setup '(slime-fancy))

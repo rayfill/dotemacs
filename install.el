@@ -20,15 +20,16 @@
 (package-install 'flymake-yaml)
 (package-install 'highlight-indentation)
 (package-install 'nvm)
+(package-install 'js2-mode)
 (package-install 'nodejs-repl)
 (package-install 'elscreen)
 (package-install 'elscreen-separate-buffer-list)
 (package-install 'magit)
 (package-install 'magit-find-file)
-(package-install 'vue-html-mode)
 (package-install 'vue-mode)
+(package-install 'vue-html-mode)
 
-(eval-when (compile load execute)
+(cl-eval-when (compile load execute)
   (require 'async))
 (async-start
  `(lambda ()

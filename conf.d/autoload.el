@@ -32,7 +32,7 @@
 		      (string-match ".*\\.el$" ent))
 		    entries))))
 
-(require 'cl)
+(require 'cl-lib)
 (ignore-errors
  (directory-traversal "~/site-lisp/"
 		      (lambda (entry)

@@ -17,7 +17,8 @@
      ((eq system-type 'cygwin) :cygwin)
      ((eq system-type 'darwin) :darwin)))
 
-(require 'cl)
+
+(require 'cl-lib)
 (defun ensure-mkdir (dir)
   (unless (ignore-errors (directory-files dir))
     (mkdir dir)))

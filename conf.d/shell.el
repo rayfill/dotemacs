@@ -1,6 +1,6 @@
 (setq shell-file-name "bash")
 
-(require 'cl)
+(require 'cl-lib)
 (defun remove-from-path (func)
   (let* ((current (split-string (getenv "PATH") ";"))
 	 (new (remove-if func current)))
