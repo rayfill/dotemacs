@@ -20,7 +20,7 @@
 (setq read-file-name-completion-ignore-case t)
 
 (when (eq window-system 'x)
-  (setq x-select-enable-clipboard t)
+  (setq select-enable-clipboard t)
   (setq interprogram-paste-function 'x-cut-buffer-or-selection-value))
 
 (setq comint-buffer-maximum-size 10240)

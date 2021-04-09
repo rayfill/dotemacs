@@ -1,5 +1,8 @@
 (cl-eval-when (:compile :load :execute)
-  (require 'cc-mode))
+  (require 'cl-lib)
+  (require 'cc-mode)
+  (require 'cc-cmds)
+  (require 'cc-vars))
 
 
 (setq tab-width 4)
@@ -15,7 +18,7 @@
   ;; tab-width
   (setq tab-width 4)
   ;; this will make sure spaces are used instead of tabs
-  (setq indent-tabs-mode t)  
+  (setq indent-tabs-mode t)
   ;; we like auto-newline and hungry-delete
   (c-toggle-auto-hungry-state -1)
   (setq c-basic-offset 4)

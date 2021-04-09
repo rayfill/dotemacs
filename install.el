@@ -28,6 +28,7 @@
 (package-install 'magit-find-file)
 (package-install 'vue-mode)
 (package-install 'vue-html-mode)
+(package-install 'slime)
 
 (cl-eval-when (compile load execute)
   (require 'async))

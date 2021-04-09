@@ -1,10 +1,12 @@
-(require 'cl-lib)
+(cl-eval-when (:compile :load :execute)
+  (require 'cl-lib)
+  (require 'python))
 
 (defun get-win32-python-path ()
   (let ((basedir "C:\\Apps"))
     (when (and (boundp 'window-system)
 	       (eq window-system 'w32))
-      (some #'identity
+      (cl-some #'identity
 	    (mapcar (lambda (ent)
 		      (let ((case-fold-search t))
 			(when (string-match ".*python.*" ent)
@@ -21,6 +23,6 @@
 
 (add-hook 'inferior-python-mode-hook
 	  (lambda ()
-	    (set-buffer-process-coding-system 'utf-8 'utf-8)
+	    (set-process-coding-system (get-buffer-process (current-buffer)) 'utf-8 'utf-8)
 	    (local-set-key (kbd "C-c M-o")
 			   'inferior-python-mode-truncate-buffer)))

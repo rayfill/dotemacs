@@ -14,7 +14,7 @@
 (defun compile-and-load (dir)
   (when (file-exists-p dir)
     (dolist (content (sort (directory-files dir) #'string<))
-      (when (string-match "^.*\\.el$" content)
+      (when (string-match "^[^.].*\\.el$" content)
 	(format "loading %s" content)
 	(let ((filepath (concat dir content)))
 	  (format "%s" content)

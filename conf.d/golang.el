@@ -1,5 +1,6 @@
 (cl-eval-when (:compile :load :execute)
-  (require 'cc-mode))
+  (require 'cc-mode)
+  (require 'cc-vars))
 
 (use-package exec-path-from-shell
   :config

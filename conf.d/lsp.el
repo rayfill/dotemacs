@@ -1,9 +1,7 @@
 (cl-eval-when (:compile :load :execute)
   (require 'use-package)
   (require 'lsp-mode)
-  (require 'company))
-
-(cl-eval-when (:compile)
+  (require 'company)
   (require 'flymake))
 
 (setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
@@ -15,9 +13,6 @@
   :init
   (require 'bind-key)
   (require 'lsp-mode)
-  (lsp-register-custom-settings
-   '(("gopls.completeUnimported" t)
-     ("gopls.watchFileChanges" t)))
   :custom
   (gc-cons-threshold (* 128 1024 1024))
   (read-process-output-max (* 1024 1024))
@@ -85,7 +80,4 @@
 	("C-c TAB" . lsp-ui-imenu)
 	("C-c s" . lsp-ui-sideline-mode))
   :commands lsp-ui-mode
-  :hook lsp-mode
-  :config
-  (eval-after-load "flymake"
-    (setq flymake-fringe-indicator-position nil)))
+  :hook lsp-mode)

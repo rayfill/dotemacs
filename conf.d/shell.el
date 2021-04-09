@@ -3,7 +3,7 @@
 (require 'cl-lib)
 (defun remove-from-path (func)
   (let* ((current (split-string (getenv "PATH") ";"))
-	 (new (remove-if func current)))
+	 (new (cl-remove-if func current)))
     new))
 
 (defun make-path-reps (lst)
@@ -23,7 +23,7 @@
 (defun get-remove-entries (mode)
   (apply #'append
 	 (mapcar #'cdr
-		 (remove-if (lambda (ent)
+		 (cl-remove-if (lambda (ent)
 			      (eq mode (car ent)))
 			    *enable-modes*))))
 
