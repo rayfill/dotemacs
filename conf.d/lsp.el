@@ -8,7 +8,7 @@
 (setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
 
 (use-package lsp
-  :hook (typescript-mode js-mode go-mode))
+  :hook (typescript-mode js2-mode go-mode))
 
 (use-package lsp-mode
   :init
@@ -40,7 +40,7 @@
   :commands lsp)
 
 ;; LSP UI tools
-(use-package lsp-ui
+(use-package lsp-ui-mode
   :init
   (require 'bind-key)
   :custom

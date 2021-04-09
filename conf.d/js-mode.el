@@ -4,9 +4,8 @@
   (require 'nodejs-repl))
 
 (use-package js2-mode
-  :init
-  (setq js-indent-level 2)
   :config
+  (setq js-indent-level 2)
   (setq indent-tabs-mode nil)
   :mode "\\.js\\'"
   :bind
@@ -17,3 +16,4 @@
         ("C-c C-c" . nodejs-repl-send-buffer)
         ("C-c C-l" . nodejs-repl-load-file)
         ("C-c C-z" . nodejs-repl-switch-to-repl)))
+
