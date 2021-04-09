@@ -9,4 +9,7 @@
   :init
   (elscreen-start)
   (elscreen-separate-buffer-list-mode)
-  (ido-mode))
+  (ido-mode)
+  :custom
+  (elscreen-display-tab nil))
+
