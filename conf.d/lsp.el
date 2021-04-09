@@ -1,6 +1,7 @@
 (cl-eval-when (:compile :load :execute)
   (require 'use-package)
   (require 'lsp-mode)
+  (require 'lsp-ui)
   (require 'company)
   (require 'flymake))
 
