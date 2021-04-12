@@ -1,4 +1,4 @@
-(cl-eval-when (:compile :load :execute)
+(cl-eval-when (:compile-toplevel :load-toplevel :execute)
   (ignore-errors
     (load (expand-file-name "~/quicklisp/slime-helper.el"))
     (require 'slime)))
