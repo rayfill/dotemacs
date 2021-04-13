@@ -10,6 +10,8 @@
 (package-install 'go-mode)
 (package-install 'lsp-mode)
 (package-install 'lsp-ui)
+(package-install 'treemacs)
+(package-install 'lsp-treemacs)
 (package-install 'multi-web-mode)
 (package-install 'typescript-mode)
 (package-install 'which-key)

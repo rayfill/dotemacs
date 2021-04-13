@@ -14,6 +14,11 @@
   :init
   (require 'bind-key)
   (require 'lsp-mode)
+  (bind-keys
+   ("C-c C-x C-a" . lsp-workspace-folders-add)
+   ("C-c C-x C-f" . lsp-workspace-folders-open)
+   ("C-c C-x C-r" . lsp-workspace-folders-remove)
+   ("C-c C-x C-d" . lsp-workspace-folders-remove))
   :custom
   (gc-cons-threshold (* 128 1024 1024))
   (read-process-output-max (* 1024 1024))
@@ -30,10 +35,6 @@
   (lsp-enable-completion-at-point t)
   :bind
   (:map lsp-mode-map
-	("C-c C-p a" . lsp-workspace-folders-add)
-	("C-c C-p o" . lsp-workspace-folders-open)
-	("C-c C-p r" . lsp-workspace-folders-remove)
-	("C-c C-p d" . lsp-workspace-folders-remove)
 	("C-c r". lsp-rename)
 	("C-." . company-complete)
 	("C-`" . flymake-goto-next-error))

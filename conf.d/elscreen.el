@@ -10,6 +10,13 @@
   (elscreen-start)
   (elscreen-separate-buffer-list-mode)
   (ido-mode)
+  :config
+  (advice-add 'elscreen-mode-line-update :override
+              (lambda ()
+                (when (elscreen-screen-modified-p 'elscreen-mode-line-update)
+                  (setq elscreen-mode-line-string
+                        (format "[%d/%d]" (elscreen-get-current-screen) (elscreen-get-number-of-screens)))
+                  (force-mode-line-update))))
   :custom
   (elscreen-display-tab nil))
 
