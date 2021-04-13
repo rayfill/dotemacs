@@ -1,4 +1,5 @@
 (cl-eval-when (:compile-toplevel :load-toplevel :execute)
+  (require 'bind-key)
   (require 'cc-mode)
   (require 'cl-lib)
   (require 'cc-mode)

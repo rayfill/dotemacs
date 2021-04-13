@@ -13,6 +13,7 @@
 			  (concat basedir "\\" ent))))
 		    (directory-files basedir))))))
 
+(defvar python-python-command "/usr/bin/python")
 (awhen (get-win32-python-path)
        (setq python-python-command (concat it "\\" "python.exe")))
 
