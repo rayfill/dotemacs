@@ -35,6 +35,7 @@
 (package-install 'tree-sitter-indent)
 (package-install 'tree-sitter-langs)
 (package-install 'csharp-mode)
+(package-install 'markdown-preview-mode)
 
 (cl-eval-when (compile load execute)
   (require 'async))
