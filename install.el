@@ -31,6 +31,10 @@
 (package-install 'vue-mode)
 (package-install 'vue-html-mode)
 (package-install 'slime)
+(package-install 'tree-sitter)
+(package-install 'tree-sitter-indent)
+(package-install 'tree-sitter-langs)
+(package-install 'csharp-mode)
 
 (cl-eval-when (compile load execute)
   (require 'async))

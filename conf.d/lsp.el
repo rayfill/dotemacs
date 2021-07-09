@@ -71,7 +71,7 @@
   ;; lsp-ui-imenu
   (lsp-ui-imenu-enable t)
   (lsp-ui-imenu-kind-position 'top)
-  :hook typescript-mode js-mode
+  :hook typescript-mode js-mode csharp-mode
   :bind
   (:map lsp-mode-map
 	("C-c C-r" . lsp-ui-peek-find-references)
