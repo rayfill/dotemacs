@@ -8,6 +8,7 @@
 (package-install 'exec-path-from-shell)
 (package-install 'use-package)
 (package-install 'go-mode)
+(package-install 'company)
 (package-install 'lsp-mode)
 (package-install 'lsp-ui)
 (package-install 'treemacs)

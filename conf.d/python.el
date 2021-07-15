@@ -5,13 +5,14 @@
 (defun get-win32-python-path ()
   (let ((basedir "C:\\Apps"))
     (when (and (boundp 'window-system)
-	       (eq window-system 'w32))
-      (cl-some #'identity
-	    (mapcar (lambda (ent)
-		      (let ((case-fold-search t))
-			(when (string-match ".*python.*" ent)
-			  (concat basedir "\\" ent))))
-		    (directory-files basedir))))))
+	           (eq window-system 'w32))
+      (when (file-exists-p basedir)
+        (cl-some #'identity
+	             (mapcar (lambda (ent)
+		                   (let ((case-fold-search t))
+			                 (when (string-match ".*python.*" ent)
+			                   (concat basedir "\\" ent))))
+		                 (directory-files basedir)))))))
 
 (defvar python-python-command "/usr/bin/python")
 (awhen (get-win32-python-path)

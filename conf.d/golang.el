@@ -5,10 +5,11 @@
 (use-package exec-path-from-shell
   :config
   (let ((envs '("PATH" "GOROOT" "GOPATH"))
-	(go-path (getenv "GOPATH")))
-    (exec-path-from-shell-copy-envs envs)
-    (when go-path
-      (push go-path exec-path))))
+		(go-path (getenv "GOPATH")))
+	(unless (memq system-type '(windows-nt))
+      (exec-path-from-shell-copy-envs envs)
+      (when go-path
+		(push go-path exec-path)))))
 
 (use-package go-mode
   :commands go-mode

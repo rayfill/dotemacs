@@ -8,14 +8,14 @@
   (let (result)
     (when (file-exists-p  base)
       (walk-directory base
-		      (lambda (dir entry)
-			(let ((case-fold-search nil))
-			  (when (string-match
-				 (case (get-architecture)
-				   (:windows "^sbcl\\.exe$")
-				   (:linux "^sbcl$"))
-				 entry)
-			    (push dir result))))))
+		              (lambda (dir entry)
+			            (let ((case-fold-search nil))
+			              (when (string-match
+				                 (cl-case (get-architecture)
+				                   (:windows "^sbcl\\.exe$")
+				                   (:linux "^sbcl$"))
+				                 entry)
+			                (push dir result))))))
     result))
 
 (defun find-core (dir)
@@ -39,15 +39,15 @@
 	      (append
 	       (list :exe
 		     (concat exec-dir
-			     (case (get-architecture)
+			     (cl-case (get-architecture)
 			       (:windows "sbcl.exe")
 			       (:linux "sbcl"))) :core) it)
 	      result)))
     result))
 
-(defvar *sbcl-base-dirs* (list (case (get-architecture)
-				 (:linux (expand-file-name "~/sbcl/"))
-				 (:windows "C:/Apps/lisp/sbcl/"))))
+(defvar *sbcl-base-dirs* (list (cl-case (get-architecture)
+				                 (:linux (expand-file-name "~/sbcl/"))
+				                 (:windows "C:/Apps/lisp/sbcl/"))))
 
 (defun get-sbcl-name (path)
   (dolist (sbcl-base-dir *sbcl-base-dirs*)
