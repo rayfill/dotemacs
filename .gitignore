@@ -1,3 +1,12 @@
+.cache/
+user.d/
+site-*.d/
+url/
+transient/
+mssql/
+snippets/
+tutorial/
+
 .cask
 *~
 session.*
@@ -7,11 +16,9 @@ tramp
 ac-comphist.dat
 *.elc
 *.el_
-.cache/
 custom.el
-user.d/
-site-*.d/
 site-install.el
-url/
 .dap-breakpoints
-transient/
+.#ido.last
+ido.last
+.lsp-eslint-choices
