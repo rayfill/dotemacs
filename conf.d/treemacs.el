@@ -8,5 +8,5 @@
   (treemacs-persist-file "/dev/null"))
 
 (use-package lsp-treemacs
-    :init
+  :init
   (lsp-treemacs-sync-mode 1))
