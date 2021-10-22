@@ -37,6 +37,9 @@
 (package-install 'tree-sitter-langs)
 (package-install 'csharp-mode)
 (package-install 'markdown-preview-mode)
+(package-install 'terraform-mode)
+(package-install 'terraform-doc)
+(package-install 'smartparens)
 
 (cl-eval-when (compile load execute)
   (require 'async))
