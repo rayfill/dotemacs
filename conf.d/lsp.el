@@ -7,6 +7,21 @@
 
 (setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
 
+(defun lsp-ui-doc-show/hide ()
+  (interactive)
+  (unless (assoc 'lsp-ui-doc-show/hide-toggle (buffer-local-variables))
+    (make-local-variable 'lsp-ui-doc-show/hide-toggle)
+    (setq lsp-ui-doc-show/hide-toggle nil))
+  (if lsp-ui-doc-show/hide-toggle
+      (progn
+        ;; active. hide action
+        (lsp-ui-doc-hide)
+        (setq lsp-ui-doc-show/hide-toggle nil))
+    (progn
+      ;; deactive. show action
+      (lsp-ui-doc-show)
+      (setq lsp-ui-doc-show/hide-toggle t))))
+
 (use-package lsp
   :hook (typescript-mode js2-mode go-mode))
 
@@ -80,6 +95,7 @@
 	("M-." . xref-find-definitions)
 	("C-c m" . lsp-ui-imenu)
 	("C-c TAB" . lsp-ui-imenu)
-	("C-c s" . lsp-ui-sideline-mode))
+	("C-c s" . lsp-ui-sideline-mode)
+    ("C-*" . lsp-ui-doc-show/hide))
   :commands lsp-ui-mode
   :hook lsp-mode)
