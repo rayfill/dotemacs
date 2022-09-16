@@ -40,6 +40,11 @@
 (package-install 'terraform-mode)
 (package-install 'terraform-doc)
 (package-install 'smartparens)
+(package-install 'lsp-java)
+(package-install 'e2wm)
+(package-install 'ts-comint)
+(package-install 'dap-mode)
+(package-install 'yasnippet)
 
 (cl-eval-when (compile load execute)
   (require 'async))

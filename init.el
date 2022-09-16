@@ -21,6 +21,8 @@
 	  (ensure-byte-compile-file filepath)
 	  (load (format "%s" (concat dir content "c"))))))))
 
+(compile-and-load "~/.emacs.d/requires.d/")
+
 (compile-and-load "~/.emacs.d/conf.d/")
 (when (file-exists-p "~/.emacs.d/site-conf.d/")
   (compile-and-load "~/.emacs.d/site-conf.d/"))

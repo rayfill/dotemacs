@@ -7,11 +7,12 @@
 
 (setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
 
+(defvar lsp-ui-doc-show/hide-toggle)
 (defun lsp-ui-doc-show/hide ()
   (interactive)
   (unless (assoc 'lsp-ui-doc-show/hide-toggle (buffer-local-variables))
     (make-local-variable 'lsp-ui-doc-show/hide-toggle)
-    (setq lsp-ui-doc-show/hide-toggle nil))
+    (setq-local lsp-ui-doc-show/hide-toggle nil))
   (if lsp-ui-doc-show/hide-toggle
       (progn
         ;; active. hide action
@@ -20,15 +21,20 @@
     (progn
       ;; deactive. show action
       (lsp-ui-doc-show)
-      (setq lsp-ui-doc-show/hide-toggle t))))
+      (setq-local lsp-ui-doc-show/hide-toggle t))))
 
 (use-package lsp
-  :hook (typescript-mode js2-mode go-mode))
+    :hook typescript-mode js-mode csharp-mode c++-mode go-mode js2-mode)
 
 (use-package lsp-mode
   :init
   (require 'bind-key)
   (require 'lsp-mode)
+  (add-hook 'lsp-mode-hook
+            (lambda ()
+              (yas-minor-mode 1)))
+  (setq lsp--formatting-indent-alist
+        (cons '(tsx-mode . typescript-indent-level) lsp--formatting-indent-alist))
   (bind-keys
    ("C-c C-x C-a" . lsp-workspace-folders-add)
    ("C-c C-x C-f" . lsp-workspace-folders-open)
@@ -86,7 +92,6 @@
   ;; lsp-ui-imenu
   (lsp-ui-imenu-enable t)
   (lsp-ui-imenu-kind-position 'top)
-  :hook typescript-mode js-mode csharp-mode
   :bind
   (:map lsp-mode-map
 	("C-c C-r" . lsp-ui-peek-find-references)

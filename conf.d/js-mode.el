@@ -7,7 +7,7 @@
   :config
   (setq js-indent-level 2)
   (setq indent-tabs-mode nil)
-  :mode "\\.js\\'"
+  :mode "\\.jsx?\\'"
   :bind
   (:map js-mode-map
         ("C-x C-e" . nodejs-repl-send-last-expression)
