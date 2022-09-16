@@ -42,7 +42,6 @@
 (package-install 'smartparens)
 (package-install 'lsp-java)
 (package-install 'e2wm)
-(package-install 'ts-comint)
 (package-install 'dap-mode)
 (package-install 'yasnippet)
 
