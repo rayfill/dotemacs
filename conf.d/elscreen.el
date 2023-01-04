@@ -18,5 +18,5 @@
                         (format "[%d/%d]" (elscreen-get-current-screen) (elscreen-get-number-of-screens)))
                   (force-mode-line-update))))
   :custom
-  (elscreen-display-tab nil))
+  (elscreen-display-tab t))
 

@@ -44,8 +44,6 @@
 (package-install 'e2wm)
 (package-install 'dap-mode)
 (package-install 'yasnippet)
-(package-install 'org-download)
-(package-install 'org-attach-screenshot)
 
 (cl-eval-when (compile load execute)
   (require 'async))

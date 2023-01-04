@@ -22,3 +22,5 @@ site-install.el
 .#ido.last
 ido.last
 .lsp-eslint-choices
+workspace
+straight

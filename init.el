@@ -15,11 +15,12 @@
   (when (file-exists-p dir)
     (dolist (content (sort (directory-files dir) #'string<))
       (when (string-match "^[^.].*\\.el$" content)
-	(format "loading %s" content)
-	(let ((filepath (concat dir content)))
-	  (format "%s" content)
-	  (ensure-byte-compile-file filepath)
-	  (load (format "%s" (concat dir content "c"))))))))
+	    (format "loading %s" content)
+	    (let* ((filepath (concat dir content))
+               (elc-filepath (concat filepath "c")))
+	      (format "%s" content)
+	      (ensure-byte-compile-file filepath)
+	      (load (format "%s" elc-filepath)))))))
 
 (compile-and-load "~/.emacs.d/requires.d/")
 
