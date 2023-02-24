@@ -36,6 +36,7 @@
   (setq lsp--formatting-indent-alist
         (cons '(tsx-mode . typescript-indent-level) lsp--formatting-indent-alist))
   (bind-keys
+   ("C-c RET" . lsp-execute-code-action)
    ("C-c C-x C-a" . lsp-workspace-folders-add)
    ("C-c C-x C-f" . lsp-workspace-folders-open)
    ("C-c C-x C-r" . lsp-workspace-folders-remove)
