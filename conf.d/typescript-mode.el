@@ -8,6 +8,7 @@
   :config
   (setq typescript-indent-level 2)
   (setq indent-tabs-mode nil)
+  (setq lsp-javascript-preferences-quote-style "single")
   :mode "\\.ts\\'"
   :bind
   (:map typescript-mode-map

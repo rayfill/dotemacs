@@ -1,6 +1,7 @@
 (cl-eval-when (:compile-toplevel :load-toplevel :execute)
   (require 'use-package)
   (require 'lsp-mode)
+  (require 'lsp-treemacs)
   (require 'lsp-ui)
   (require 'company)
   (require 'flymake))
@@ -49,7 +50,7 @@
   (lsp-log-io nil)
   (lsp-trace nil)
   (lsp-print-performance nil)
-  (lsp-eslint-enable nil)
+  (lsp-eslint-enable t)
   ;; general
   (lsp-auto-guess-root nil)
   (lsp-document-sync-method lsp--sync-incremental) ;; lsp--sync-none, lsp--sync-full or lsp--sync-incremental
@@ -59,7 +60,8 @@
   (:map lsp-mode-map
 	("C-c r". lsp-rename)
 	("C-." . company-complete)
-	("C-`" . flymake-goto-next-error))
+	("C-`" . flymake-goto-next-error)
+    ("C-c `" . lsp-treemacs-errors-list))
   :commands lsp)
 
 ;; LSP UI tools
