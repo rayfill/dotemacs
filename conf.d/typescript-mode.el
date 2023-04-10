@@ -1,14 +1,16 @@
 (cl-eval-when (:compile-toplevel :load-toplevel :execute)
   (require 'use-package)
   (require 'flymake)
-  (require 'typescript-mode))
+  (require 'typescript-mode)
+  (require 'lsp-javascript))
 
 (remove-hook 'flymake-diagnostic-functions 'flymake-proc-legacy-flymake)
 (use-package typescript-mode
   :config
   (setq typescript-indent-level 2)
   (setq indent-tabs-mode nil)
-  (setq lsp-javascript-preferences-quote-style "single")
+  ;(setq lsp-javascript-preferences-quote-style "single")
+  ;(setq lsp-typescript-preferences-quote-style "single")
   :mode "\\.ts\\'"
   :bind
   (:map typescript-mode-map
