@@ -5,6 +5,8 @@
 (package-install 'package-utils)
 (package-install 'async)
 
+(package-utils-list-upgrades)
+
 (package-install 'exec-path-from-shell)
 (package-install 'use-package)
 (package-install 'go-mode)
@@ -40,18 +42,16 @@
 (package-install 'terraform-mode)
 (package-install 'terraform-doc)
 (package-install 'smartparens)
-(package-install 'lsp-java)
 (package-install 'e2wm)
 (package-install 'dap-mode)
 (package-install 'yasnippet)
+(package-install 'mmm-mode)
+(package-install 'graphql-mode)
+(package-install 'request)
 
-(cl-eval-when (compile load execute)
-  (require 'async))
-(async-start
- `(lambda ()
-    (setq load-path ',load-path)
-    (require 'package-utils)
-    (package-refresh-contents)
-    (package-utils-upgrade-all t))
- (lambda (result)
-   (message "package upgrade processing done.")))
+(defconst *check-file* "/dev/shm/.emacs-package-upgrade-checked")
+(when (not (file-exists-p *check-file*))
+  (write-region "" nil *check-file*)
+  (package-refresh-contents)
+  (package-utils-upgrade-all))
+

@@ -22,8 +22,7 @@
 
 (defun json-parse-buffer-advicer (orig &rest rest)
   (save-excursion
-    (while (re-search-forward "\u0000" nil t)
-      (replace-match ""))
+    (relace-string "\u0000" "")
     (apply orig rest)))
 
 (advice-add 'json-parse-buffer :around
