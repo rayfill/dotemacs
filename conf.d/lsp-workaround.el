@@ -10,9 +10,9 @@
 ;(advice-remove 'json-parse-string #'json-parse-string-advicer)
 
 ;(json-read-from-string string)
-(defun json-read-from-string-advicer (orig string &rest)
-  (format "json-read-from-string %s %s" string rest)
-  (apply orig (s-replace "\u0000" "" string) rest))
+(defun json-read-from-string-advicer (orig string &rest args)
+  ;(format "json-read-from-string %s %s" string rest)
+  (apply orig (s-replace "\u0000" "" string) args))
 (advice-add 'json-read-from-string :around
             #'json-read-from-string-advicer)
 ;; (advice-mapc (lambda (&rest args)
@@ -22,7 +22,8 @@
 
 (defun json-parse-buffer-advicer (orig &rest rest)
   (save-excursion
-    (relace-string "\u0000" "")
+    (while (search-forward "\u0000" nil t)
+      (replace-match "" nil t))
     (apply orig rest)))
 
 (advice-add 'json-parse-buffer :around
