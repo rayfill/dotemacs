@@ -3,9 +3,6 @@
   (package-refresh-contents nil))
 
 (package-install 'package-utils)
-(package-install 'async)
-
-(package-utils-list-upgrades)
 
 (package-install 'exec-path-from-shell)
 (package-install 'use-package)
