@@ -25,7 +25,15 @@
       (setq-local lsp-ui-doc-show/hide-toggle t))))
 
 (use-package lsp
-    :hook typescript-mode js-mode csharp-mode c++-mode go-mode js2-mode)
+  :hook
+  typescript-mode
+  js-mode
+  csharp-mode
+  c++-mode
+  go-mode
+  js2-mode
+  rust-mode
+  )
 
 (use-package lsp-mode
   :init
