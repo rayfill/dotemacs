@@ -46,6 +46,7 @@
 (package-install 'graphql-mode)
 (package-install 'request)
 (package-install 'rust-mode)
+(package-install 'cargo)
 
 (defconst *check-file* "/dev/shm/.emacs-package-upgrade-checked")
 (when (not (file-exists-p *check-file*))
