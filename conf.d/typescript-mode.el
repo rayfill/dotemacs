@@ -11,7 +11,7 @@
   (setq indent-tabs-mode nil)
   ;(setq lsp-javascript-preferences-quote-style "single")
   ;(setq lsp-typescript-preferences-quote-style "single")
-  :mode "\\.ts\\'"
+  :mode "\\.[cm]?ts\\'"
   :bind
   (:map typescript-mode-map
         ("C-x C-e" . nodejs-repl-send-last-expression)
