@@ -47,6 +47,8 @@
 (package-install 'request)
 (package-install 'rust-mode)
 (package-install 'cargo)
+(package-install 'auto-virtualenvwrapper)
+
 
 (defconst *check-file* "/dev/shm/.emacs-package-upgrade-checked")
 (when (not (file-exists-p *check-file*))

@@ -69,6 +69,7 @@
 	("C-c r". lsp-rename)
 	("C-." . company-complete)
 	("C-`" . flymake-goto-next-error)
+    ("C-?" . lsp-describe-thing-at-point)
     ("C-c `" . lsp-treemacs-errors-list))
   :commands lsp)
 
