@@ -51,8 +51,10 @@
    ("C-c C-x C-r" . lsp-workspace-folders-remove)
    ("C-c C-x C-d" . lsp-workspace-folders-remove))
   :custom
-  (gc-cons-threshold (* 128 1024 1024))
+  (gc-cons-threshold (* 512 1024 1024))
   (read-process-output-max (* 1024 1024))
+  (lsp-javascript-preferences-quote-style "single")
+  (lsp-typescript-preferences-quote-style "single")
   ;; debug
   (lsp-print-io nil)
   (lsp-log-io nil)
