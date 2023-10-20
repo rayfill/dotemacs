@@ -2,6 +2,13 @@
   (format "%s" (expand-file-name "~/.emacs.d/elpa"))
   (package-refresh-contents nil))
 
+
+(defconst *check-file* "/dev/shm/.emacs-package-upgrade-checked")
+(when (not (file-exists-p *check-file*))
+  (write-region "" nil *check-file*)
+  (package-refresh-contents)
+  (package-utils-upgrade-all))
+
 (package-install 'package-utils)
 
 (package-install 'exec-path-from-shell)
@@ -48,11 +55,4 @@
 (package-install 'rust-mode)
 (package-install 'cargo)
 (package-install 'auto-virtualenvwrapper)
-
-
-(defconst *check-file* "/dev/shm/.emacs-package-upgrade-checked")
-(when (not (file-exists-p *check-file*))
-  (write-region "" nil *check-file*)
-  (package-refresh-contents)
-  (package-utils-upgrade-all))
 
