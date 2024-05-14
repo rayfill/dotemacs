@@ -1,13 +1,13 @@
 (cl-eval-when (:compile-toplevel :load-toplevel :execute)
   (require 'use-package)
   (require 'lsp-mode)
-  (require 'lsp-treemacs)
   (require 'lsp-ui)
   (require 'company)
   (require 'flymake))
 
 (setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
 
+(setq lsp-clients-typescript-prefer-use-project-ts-server t)
 (defvar lsp-ui-doc-show/hide-toggle)
 (defun lsp-ui-doc-show/hide ()
   (interactive)
@@ -71,8 +71,7 @@
 	("C-c r". lsp-rename)
 	("C-." . company-complete)
 	("C-`" . flymake-goto-next-error)
-    ("C-?" . lsp-describe-thing-at-point)
-    ("C-c `" . lsp-treemacs-errors-list))
+    ("C-?" . lsp-describe-thing-at-point))
   :commands lsp)
 
 ;; LSP UI tools

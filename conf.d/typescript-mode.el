@@ -9,6 +9,8 @@
   :config
   (setq typescript-indent-level 2)
   (setq indent-tabs-mode nil)
+  (setq lsp-file-watch-ignored (append '("[/\\\\].next\\'") lsp-file-watch-ignored))
+
   :mode "\\.[cm]?ts\\'"
   :bind
   (:map typescript-mode-map

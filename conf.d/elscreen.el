@@ -8,8 +8,8 @@
 (use-package elscreen
   :init
   (elscreen-start)
-  (elscreen-separate-buffer-list-mode)
   (ido-mode)
+  (elscreen-separate-buffer-list-mode)
   :config
   (advice-add 'elscreen-mode-line-update :override
               (lambda ()
