@@ -4,12 +4,13 @@
 
 
 (defconst *check-file* "/dev/shm/.emacs-package-upgrade-checked")
+
+(package-install 'package-utils)
 (when (not (file-exists-p *check-file*))
   (write-region "" nil *check-file*)
   (package-refresh-contents)
   (package-utils-upgrade-all))
 
-(package-install 'package-utils)
 
 (package-install 'exec-path-from-shell)
 (package-install 'use-package)
