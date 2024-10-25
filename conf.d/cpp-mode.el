@@ -2,7 +2,7 @@
   (require 'use-package)
   (require 'cc-mode))
 
-(use-package c++-mode
+(use-package cc-mode
   :config
   (setq indent-tabs-mode nil)
   :mode "\\.[ch]\\(pp\\|++\\|xx\\)\\'")

@@ -21,7 +21,7 @@
 
 (when (eq window-system 'x)
   (setq select-enable-clipboard t)
-  (setq interprogram-paste-function 'x-cut-buffer-or-selection-value))
+  (setq interprogram-paste-function 'x-selection-value))
 
 (setq comint-buffer-maximum-size 10240)
 (add-hook 'comint-output-filter-functions 'comint-truncate-buffer)

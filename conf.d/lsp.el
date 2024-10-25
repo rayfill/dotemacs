@@ -29,11 +29,10 @@
   typescript-mode
   js-mode
   csharp-mode
-  c++-mode
+  cc-mode
   go-mode
   js2-mode
-  rust-mode
-  )
+  rust-mode)
 
 (use-package lsp-mode
   :init
