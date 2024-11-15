@@ -74,7 +74,7 @@
   :commands lsp)
 
 ;; LSP UI tools
-(use-package lsp-ui-mode
+(use-package lsp-ui
   :init
   (require 'bind-key)
   :custom
